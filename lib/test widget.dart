@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 
 
 
@@ -35,30 +36,47 @@ class _RosState extends State<Ros>{
 
   @override
   Widget build(BuildContext context) {
-   return GridView.count(
-     primary: false,
-     padding: const EdgeInsets.all(20),
-     crossAxisSpacing: 10,
-     mainAxisSpacing: 10,
-     crossAxisCount: 2,
+   return ListView(
+     padding: const EdgeInsets.all(8),
+
      children: <Widget>[
        Container(
-         padding: const EdgeInsets.all(8),
-         child: const Text('He\'d have you all unravel at the'),
+         padding: const EdgeInsets.all(15),
          color:Colors.teal[100],
-       ),
+         child: const ListTile(
+           leading: Icon(Icons.settings),
+           title: Text('Settings'),
+           trailing: Icon(Icons.arrow_forward_ios),
+         ),
 
-       Container(
-         padding: const EdgeInsets.all(8),
-         child: const Text('Heed not the rabble'),
+       ),
+       Card(
+         elevation: 16,
+         borderOnForeground: true,
+         clipBehavior: Clip.antiAlias,
+         semanticContainer: true,
+         child: const ListTile(
+           leading: Icon(Icons.wifi),
+           title: Text('Wifi'),
+           trailing: Icon(Icons.arrow_forward_ios),
+         ),
          color:Colors.teal[200],
        ),
 
-       Container(
-         padding: const EdgeInsets.all(8),
-         child: const Text('Sound of screams but the'),
+       Card(
+         borderOnForeground: true,
+         elevation: 6,
+         semanticContainer: true,
+         clipBehavior: Clip.antiAliasWithSaveLayer,
+         child:Container(
+         padding: const EdgeInsets.all(1),
+         child: const ListTile(
+           leading: Icon(Icons.accessibility_new_outlined),
+           title: Text('Accessibility'),
+           trailing: Icon(Icons.arrow_forward_ios),
+         ),
          color:Colors.teal[300],
-       ),
+       ),),
 
        Container(
          padding: const EdgeInsets.all(8),
